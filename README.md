@@ -3,9 +3,9 @@ The Pokédex (ポケモン図鑑 Pokemon Zukan) is an electronic device designed
 
 # Colors
 ```js
-const colors = {
-    fire: '#FDDFDF',
-    grass: '#DEFDE0',
+colors = {
+   	fire: '#FDDFDF',
+ 	grass: '#DEFDE0',
 	electric: '#FCF7DE',
 	water: '#DEF3FD',
 	ground: '#f4e7da',
