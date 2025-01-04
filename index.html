@@ -1,44 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enhanced Pokédex</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-    <div class="pokedex-container">
-        <header>
-            <h1>Pokédex</h1>
-            <div class="search-container">
-                <input type="text" id="search-input" placeholder="Search Pokémon by name or ID...">
-                <button id="search-btn"><i class="fas fa-search"></i></button>
-            </div>
-        </header>
-
-        <!-- Modal for Pokemon details -->
-        <div id="pokemon-modal" class="modal">
-            <div class="modal-content">
-                <span class="close-button">&times;</span>
-                <div id="pokemon-detail"></div>
-            </div>
-        </div>
-
-        <!-- Main container for Pokemon cards -->
-        <div class="poke-container" id="poke-container">
-            <!-- Pokemon cards will be inserted here -->
-        </div>
-
-        <!-- Loading indicator -->
-        <div id="loading">
-            <div class="pokeball"></div>
-            <p>Loading Pokémon...</p>
-        </div>
-
-        <!-- Load more button -->
-        <button id="load-more" class="load-more-btn">Load More Pokémon</button>
-    </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Pokédex</title>
+    <link rel=" shortcut icon" type="image/png" href="img/favicon.png" />
+  </head>
+  <body>
+    <h1>Pokédex</h1>
+    <div class="poke-container" id="poke-container"></div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
