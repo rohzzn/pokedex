@@ -1,3 +1,8 @@
+/*****************************************************
+ * script.js
+ *****************************************************/
+
+// DOM elements
 const pokeContainer = document.getElementById('poke-container');
 const searchInput = document.getElementById('search');
 const searchBtn = document.getElementById('searchBtn');
@@ -5,11 +10,8 @@ const modal = document.getElementById('details-modal');
 const modalClose = document.getElementById('modal-close');
 const detailsContent = document.getElementById('details-content');
 
-/**
- * Change this to however many Pokemon you want.
- * Gen 1 has 151, or you can try 898 for the full set
- */
-const POKEMON_COUNT = 151;
+// We want all 1010 Pokémon from Gen 1 to Gen 9:
+const POKEMON_COUNT = 1010;
 
 // Color mapping by type
 const colors = {
@@ -47,17 +49,21 @@ searchInput.addEventListener('keydown', (e) => {
   }
 });
 
-// Close the modal
+// Close the modal when 'x' is clicked
 modalClose.addEventListener('click', () => {
   closeModal();
 });
 
-// Clicking outside modal also closes it
+// Close the modal when clicking outside modal content
 window.addEventListener('click', (event) => {
   if (event.target === modal) {
     closeModal();
   }
 });
+
+/*****************************************************
+ * Functions
+ *****************************************************/
 
 /**
  * Fetch all Pokémon up to POKEMON_COUNT
@@ -93,9 +99,7 @@ function createPokemonCard(pokemon) {
 
   pokemonEl.style.backgroundColor = color;
 
-  // Use a stable sprite URL from PokeAPI’s GitHub
-  // This is the official front default sprite
-  // (You can also use 'official-artwork' or others from the Pokemon API)
+  // Use PokeAPI's official sprite
   const imageURL = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`;
 
   const pokemonInnerHTML = `
@@ -111,7 +115,7 @@ function createPokemonCard(pokemon) {
 
   pokemonEl.innerHTML = pokemonInnerHTML;
 
-  // Clicking the card => Show modal with more details
+  // Clicking the card => show modal with more details
   pokemonEl.addEventListener('click', () => {
     showDetails(pokemon);
   });
@@ -144,9 +148,7 @@ function showDetails(pokemon) {
   const imageURL = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`;
 
   // Build abilities list
-  const abilities = pokemon.abilities
-    .map((ab) => ab.ability.name)
-    .join(', ');
+  const abilities = pokemon.abilities.map((ab) => ab.ability.name).join(', ');
 
   // Build stats list
   const statsHtml = pokemon.stats
@@ -162,7 +164,7 @@ function showDetails(pokemon) {
   // Modal content
   detailsContent.innerHTML = `
     <div class="details-header">
-      <img src="${imageURL}" alt="${name}">
+      <img src="${imageURL}" alt="${name}" />
       <div>
         <h2>${name} (#${pokeID})</h2>
         <p><strong>Type:</strong> ${pokeTypes}</p>
