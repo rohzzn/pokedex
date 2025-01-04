@@ -2,14 +2,36 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Pokédex</title>
-    <link rel=" shortcut icon" type="image/png" href="img/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <h1>Pokédex</h1>
+
+    <!-- Search Field -->
+    <div class="search-container">
+      <input
+        type="text"
+        id="search"
+        placeholder="Search by name or ID..."
+        autofocus
+      />
+      <button id="searchBtn">Search</button>
+    </div>
+
+    <!-- Container to hold all Pokémon cards -->
     <div class="poke-container" id="poke-container"></div>
+
+    <!-- Modal for detailed Pokémon info -->
+    <div class="modal" id="details-modal">
+      <div class="modal-content">
+        <span class="close" id="modal-close">&times;</span>
+        <div id="details-content"></div>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
